@@ -20,6 +20,8 @@ from . import settings
 urlpatterns = [
     # Core.
     path('', include('core.urls')),
+    # Services.
+    path('', include('services.urls')),
     # Admin.
     path('admin/', admin.site.urls),
 ]
