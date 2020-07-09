@@ -21,7 +21,9 @@ urlpatterns = [
     # Core.
     path('', include('core.urls')),
     # Services.
-    path('', include('services.urls')),
+    path('services/', include('services.urls')),
+    # Blog.
+    path('blog/', include('blog.urls')),
     # Admin.
     path('admin/', admin.site.urls),
 ]
