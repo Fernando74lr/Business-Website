@@ -9,7 +9,7 @@
 
 <!-- Content -->
 {% block content %}
-  {% for post in posts %}
+  {% for post in category.get_posts.all %}
     <section class="page-section cta">
       <div class="container">
         <div class="row">
@@ -27,12 +27,12 @@
               </p>
               <p class="mb-0 mbt">
                 <span class="section-heading-under">Publicado por <em><b>{{post.author}}</b></em> en <em>
-                  <em>
-                    {% for category in post.categories.all %}
-                      <a href="{% url 'category' category.id %}" class="link">{{category.name}}</a>{% if not forloop.last %},{% endif %}
-                    {% endfor %}
-                  </em>
-                </span>
+                <em>
+                  {% for category in post.categories.all %}
+                    <a href="{% url 'category' category.id %}" class="link">{{category.name}}</a>{% if not forloop.last %},{% endif %}
+                  {% endfor %}
+                </em>
+              </span>
               </p>
             </div>
            </div>
