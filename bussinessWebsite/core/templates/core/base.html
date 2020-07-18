@@ -68,28 +68,34 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Pié de página -->
+    <!-- Footer -->
     <footer class="footer text-faded text-center py-5">
       <div class="container">
         <p class="m-0">
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
+          {% if LINK_TWITTER %}
+            <a href="{{LINK_TWITTER}}" class="link" target="blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          {% endif %}
+          {% if LINK_FACEBOOK %} 
+            <a href="{{LINK_FACEBOOK}}" class="link" target="blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          {% endif %}
+          {% if LINK_INSTAGRAM %}
+            <a href="{{LINK_INSTAGRAM}}" class="link" target="blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          {% endif %}
 	    </p>
         <p class="m-0 mbt">
         	<a href="{% url 'sample' %}" class="link">Política de privacidad</a> ·
