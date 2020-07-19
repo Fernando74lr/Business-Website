@@ -23,40 +23,35 @@
               {% if 'ok' in request.GET %}
                 <p>Your message has been sent correctly, we will contact you shortly</p>
               {% endif %}
+              
+              <!-- Formulario de contacto -->
               <form action="" method="POST">
                 {% csrf_token %}
-                <table>
-                  {{form.as_table}}
-                </table>
-                <input type="submit" value="Send">
-              </form>
-              <!-- Formulario de contacto 
-              <form>
                   <div class="form-group">
-                      <label>Nombre *</label>
+                      <label>Name *</label>
                       <div class="input-group">
-                          <input type="text" class="form-control">
+                          {{form.name}}
                       </div>
+                      {{form.name.errors}}
                   </div>
                   <div class="form-group">
                       <label>Email *</label>
                       <div class="input-group">
-                          <input type="text" class="form-control">
+                          {{form.email}}
                       </div>
-                      <ul class="errorlist">
-                          <li>El email no es correcto.</li>
-                      </ul>
+                      {{form.name.errors}}
                   </div>
                   <div class="form-group">
-                      <label>Mensaje *</label>
+                      <label>Message *</label>
                       <div class="input-group">
-                          <textarea class="form-control"></textarea>
+                          {{form.content}}
                       </div>
+                      {{form.name.errors}}
                   </div>
                   <div class="text-center">
-                      <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar">
+                      <input type="submit" class="btn btn-primary btn-block py-2" value="Send">
                   </div>
-              </form>-->
+              </form>
               <!-- Fin formulario de contacto -->
 
             </div>
