@@ -17,13 +17,17 @@
           <div class="col-xl-9 col-lg-10 mx-auto">
             <div class="bg-faded rounded p-5">
               <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Envíanos tus dudas</span>
-                <span class="section-heading-lower">Contacto</span>
+                <span class="section-heading-upper">Tell us your doubts</span>
+                <span class="section-heading-lower">Contact</span>
               </h2>
               {% if 'ok' in request.GET %}
-                <p>Your message has been sent correctly, we will contact you shortly</p>
+                <p style="color:green;"><b>Your message has been sent correctly, we will contact you shortly.</b></p>
               {% endif %}
               
+              {% if 'fail' in request.GET %}
+                <p style="color:red;"><b>Something went wrong, please try again.</b></p>
+              {% endif %}
+
               <!-- Formulario de contacto -->
               <form action="" method="POST">
                 {% csrf_token %}
